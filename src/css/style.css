@@ -1,0 +1,291 @@
+
+body {
+	font-size: 20px;
+	color: #666;
+	font-family: 'Montserrat', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	transition: .3s;
+}
+
+a:hover {
+	color: black;
+}
+
+h1 {
+	font-size: 50px;
+	font-weight: 100;
+}
+
+header {
+	text-align: right;
+}
+
+header .logo {
+	float: left;
+	padding: 40px 50px;
+	font-size: 30px;
+	font-weight: 100;
+}
+
+header nav a {
+	display: inline-block;
+	padding: 50px 50px 50px 0;
+	font-size: 16px;
+}
+
+.container {
+	margin: auto;
+	padding: 20px;
+}
+
+.max-width {
+	max-width: 800px;
+}
+
+.big {
+	font-size: 35px;
+	font-weight: 100;
+	line-height: 1.6;
+	margin: 20px;
+}
+
+.anim {
+	animation: appear .6s ease-out both;
+	transform-origin: top;
+}
+
+.anim.timed:nth-child(2){ animation-delay: 2s; }
+.anim.timed:nth-child(3){ animation-delay: 4s; }
+.anim.timed:nth-child(4){ animation-delay: 6s; }
+.anim.timed:nth-child(5){ animation-delay: 8s; }
+
+@keyframes appear {
+	0%{ transform: rotateX(45deg) translateY(100px); opacity: 0; }
+	100%{ transform: rotateX(0deg) translateY(0px); opacity: 1; }
+}
+
+#form {
+	max-width: 600px;
+	margin: auto;
+}
+
+#form:target {
+	animation: none;
+}
+
+.input-group {
+	margin: 20px;
+
+	opacity: 0.7;
+	transition: .3s;
+}
+
+.input-group:hover,
+.input-group input:focus ~ label {
+	opacity: 1;
+	transition: .3s;
+}
+.input-group input,
+.input-group textarea {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 5px 0;
+	margin: 5px;
+	height: 100%; /*fix box sizing pb with padding on firefox*/
+	min-height: 25px;
+	width: 380px;
+	border-bottom: 2px solid #999;
+}
+
+.input-group textarea {
+	min-height: 65px;
+}
+
+.input-group label {
+	display: inline-block;
+	width: 160px;
+	text-align: right;
+}
+.input-group label::after{
+	content: " : ";
+}
+
+.input-group.small input {
+	width: 100px;
+}
+
+input[type=submit]{
+	margin-left: 160px;
+	padding: 20px;
+	text-transform: uppercase;
+	font-size: 16px;
+}
+
+.input-group.error input {
+  animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both;
+	border-bottom-color: #444;
+}
+
+.input-group.error,
+.input-group.error:hover {
+	opacity: 1;
+	color: black;
+}
+
+.error-message{
+	padding-top: 40px;
+	text-align: center;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.field-error {
+	display: block;
+	margin: 10px 18px;
+	text-transform: uppercase;
+	font-size: 12px;
+	text-align: right;
+}
+
+.messages {
+	visibility: hidden;
+	background: white;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	animation: message 2s ease-in-out;
+}
+
+@keyframes message {
+	from { visibility: visible;  opacity: 1; }
+	60% { opacity: 1; }
+	to { opacity: 0; }
+}
+
+.messages span {
+	position: absolute;
+	top: 40%;
+	width: 100%;
+	font-size: 40px;
+	text-align: center;
+	animation: messageSpan 2s ease-out both;
+}
+@keyframes messageSpan {
+	0%	{ transform: rotateX(-30deg) translateY(100px); }
+	30%	{ transform: rotateX(0deg) translateY(0px); }
+	70%	{ transform: rotateX(0deg) translateY(0px); }
+	100%{ transform: rotateX(30deg) translateY(-100px); }
+}
+
+table {
+	font-size: 16px;
+}
+
+tr {
+	border-bottom: 1px dashed #ddd;
+	transition: .3s;
+}
+
+.inexact-match {
+	opacity: .5;
+}
+
+th {
+	font-weight: 700;
+}
+
+tr:hover {
+	opacity: 1;
+	background: #fafafa;
+	transition: .3s;
+}
+
+td, th {
+	padding: 20px;
+	border-left: 1px dashed #ddd;
+}
+
+th.sorting{
+	color: black;
+}
+
+th.sorting a::before {
+	content: '↑';
+
+}
+
+td a, th a {
+	display: inline-block;
+	width: 100%;
+	margin: -20px -20px;
+	padding: 20px;
+}
+
+.list {
+	margin-left: 50px;
+}
+
+.list li {
+	line-height: 1.6;
+	font-size: 25px;
+	font-weight: 100;
+}
+
+.list .action {
+	display: inline-block;
+	margin-left: 20px;
+	font-size: 20px;
+
+}
+
+h1 {
+	margin: 50px;
+}
+
+.product-table td {
+	border-right: 1px dashed #ddd;
+}
+
+.action-buttons {
+	float: right;
+	margin-right: 20px;
+	width: 150px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+.action-buttons a {
+	display: block;
+	line-height: 1.6;
+	font-size: 16px;
+}
+
+.search {
+	margin: 0 20px 60px 20px;
+}
+
+.search input#search {
+	width: 80%; /*old browsers*/
+	width: calc(100% - 100px);
+	height: 100%; /*fix box sizing pb on firefox*/
+	padding: 15px 0;
+	border-bottom: 2px solid #999;
+	font-weight: 100;
+}
+
+.search input[type=submit] {
+	display: none;
+}
+
+footer{
+	height: 200px;
+}
